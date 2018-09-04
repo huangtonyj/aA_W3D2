@@ -62,6 +62,14 @@ FROM
 WHERE
   users.fname = "Earl" AND users.lname = "Cat";
 
+INSERT INTO
+  questions (title, body, author_id)
+SELECT
+  "Question 4", "Is average karma working correctly?", users.id
+FROM
+  users
+WHERE
+  users.fname = "Earl" AND users.lname = "Cat";
 
 -- QUESTION_FOLLOWS
 
@@ -140,7 +148,7 @@ VALUES
 -- and here is the lazy way to add some seed data:
 INSERT INTO question_likes (user_id, question_id) VALUES (1, 1);
 INSERT INTO question_likes (user_id, question_id) VALUES (1, 2);
-
+INSERT INTO question_likes (user_id, question_id) VALUES (1, 3);
 
 -- TAGS
 
